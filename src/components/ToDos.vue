@@ -25,17 +25,13 @@
 <script>
   import NewToDo from './NewToDo';
 
-  if(!localStorage.getItem('todos')){
-    localStorage.setItem('todos', []);
-  }
-
-  const savedTodos = localStorage.getItem('todos');
+  let savedTodos = localStorage.getItem('todos') ? localStorage.getItem('todos') : [];
 
   export default {
     name: 'ToDos',
     data: function() {
       return {
-        todos: JSON.parse(savedTodos)
+        todos: savedTodos
       };
     },
     methods: {
