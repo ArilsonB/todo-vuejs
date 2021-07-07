@@ -74,7 +74,7 @@
         this.todoList.splice(index, 1);
       },
       completeTodo: function(todo){
-        todo.complete = !todo.complete;
+        todo.completed = !todo.completed;
       },
       filterTodos: function(filter){
         this.visibility = filter;
