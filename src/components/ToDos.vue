@@ -31,7 +31,7 @@
     name: 'ToDos',
     data: function() {
       return {
-        todos: JSON.parse(savedTodos)
+        todos: [...JSON.parse(savedTodos)]
       };
     },
     methods: {
