@@ -7,6 +7,32 @@ body {
 
 .centered {
   display: flex;
-  width: 50vw;
+  width: 800px;
   margin: 0 auto;
+}
+
+@media (min-width:320px)  { 
+  .centered {
+    width: 300px;
+  }
+}
+@media (min-width:481px)  {
+  .centered {
+    width: 461px;
+  }
+}
+@media (min-width:641px)  {
+  .centered {
+    width: 621px;
+  }
+}
+@media (min-width:961px)  {
+  .centered {
+    width: 800px;
+  }
+}
+@media (min-width:1025px) {
+  .centered {
+    width: 800px;
+  }
 }
