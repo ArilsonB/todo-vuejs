@@ -23,45 +23,43 @@
 </template>
 
 <script>
-  import NewToDo from './NewToDo';
+  import { watchEffect } from 'vue';
 
-  let savedTodos = localStorage.getItem('todos') ? localStorage.getItem('todos') : [];
+  import NewToDo from './NewToDo';
 
   export default {
     name: 'ToDos',
-    data: function() {
+    data() {
       return {
-        todos: savedTodos
+        todos: JSON.parse(localStorage.getItem('todo-list') || '[]'),
       };
     },
     methods: {
       deleteToDo(index){
         this.todos.splice(index, 1);
-        localStorage.setItem('todos', JSON.stringify(this.todos));
       },
       addToDo(todo) {
         this.todos.push(todo);
-        localStorage.setItem('todos', JSON.stringify(this.todos));
-
-        console.log(savedTodos);
       }
     },
-    /*computed: {
-      allTodos(){
-        return this.todos.map(todo => ({
-          ...todo
-        }))
-      }
-    },*/
+    computed: {
+    
+    },
     watch: {
-      todos(val){
-        console.log('val ', val);
+      todos: {
+        deep: true,
+        handle(){
+          alert(this.todos);
+          //localStorage.setItem('todo-list', JSON.stringify(todo));
+        }
       }
     },
     components: {
       NewToDo
     },
   }
+
+  watchEffect(() => alert('Olá'));
 </script>
 
 <style scoped>
@@ -80,6 +78,7 @@
     border-radius: 20px;
     min-height: 200px;
     padding: 20px;
+    box-shadow: 5px 5px 25px rgba(25,25,25,.2);
   }
 
   .empty_msg {

@@ -36,7 +36,8 @@
 
         this.$emit('add-todo', {
           todo: this.todo,
-          time: dataFormatada
+          time: dataFormatada,
+          completed: false,
         });
 
         this.todo = '';
@@ -58,6 +59,7 @@
     width: 100%;
     padding: 20px 60px 20px 30px;
     border-radius: 20px;
+    box-shadow: 0 0 5px rgba(25,25,25,.25);
   }
 
   button {
