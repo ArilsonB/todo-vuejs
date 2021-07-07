@@ -23,14 +23,16 @@
           <i class="far fa-clock"></i>
           <span>Created at {{item.time}}</span>
         </time>
-        <a href="#" class="complete" v-on:click.prevent="completeTodo(item)">
-          <i class="fas fa-check"></i>
-          <span>Completar</span>
-        </a>
-        <a href="#" class="delete" v-on:click.prevent="deteteTodo(index)">
-          <i class="fas fa-times"></i>
-          <span>Apagar</span>
-        </a>
+        <div class="todo_btn">
+          <a href="#" class="complete" v-on:click.prevent="completeTodo(item)">
+            <i class="fas fa-check"></i>
+            <span>Completar</span>
+          </a>
+          <a href="#" class="delete" v-on:click.prevent="deteteTodo(index)">
+            <i class="fas fa-times"></i>
+            <span>Apagar</span>
+          </a>
+        </div>
         <p>{{item.todo}}</p>
       </div>
     </section>
@@ -86,8 +88,12 @@
       }
     },
     watch: {
-      todoList: function(todo){
-        localStorage.setItem('todo-list', JSON.stringify(todo));
+      todoList: {
+        handler: function(todo){
+          localStorage.setItem('todo-list', JSON.stringify(todo));
+          //console.log(JSON.parse(localStorage.getItem('todo-list')));
+        },
+        deep: true
       }
     }
   }
@@ -166,14 +172,25 @@
   .todo_item > time > i + span {
     margin-left: 5px;
   }
-  .todo_item > .delete {
+  .todo_item > .todo_btn {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     font-size: 12px;
     right: 5px;
+    text-align: right;
+  }
+  .todo_item > .todo_btn > a.complete {
+    color: green;
+    cursor: pointer;
+    margin-bottom: 2px;
+  }
+  .todo_item > .todo_btn > a.delete {
     color: red;
     cursor: pointer;
   }
-  .todo_item > .delete > i + span {
+
+  .todo_item > .todo_btn > a > i + span {
     margin-left: 5px;
   }
   .todo_item > p {
