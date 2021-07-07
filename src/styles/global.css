@@ -1,0 +1,14 @@
+:root {
+  --color-primary: #ddd;
+}
+
+body {
+  display: flex;
+  font-family: 'Encode Sans SC', sans-serif;
+  background-color: #eee;
+}
+
+.container {
+  margin: 0 auto;
+  width: 800px;
+}
