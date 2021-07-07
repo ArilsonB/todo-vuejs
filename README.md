@@ -1,4 +1,4 @@
-# to-do-vuejs
+# todo-vuejs
 
 ## Project setup
 ```

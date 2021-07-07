@@ -1,22 +1,24 @@
 <template>
-  <Header />
-  <ToDos />
-  <Footer />
+  <div>
+    <Header />
+    <TodoList />
+    <Footer />
+  </div>
 </template>
 
 <script>
 
-import './styles/global.css';
+import '@/styles/global.css';
 
-import Header from './components/Header.vue';
-import ToDos from './components/ToDos.vue';
-import Footer from './components/Footer.vue';
+import Header from './components/Header';
+import TodoList from './components/TodoList';
+import Footer from './components/Footer';
 
 export default {
   name: 'App',
   components: {
     Header,
-    ToDos,
+    TodoList,
     Footer
   }
 }

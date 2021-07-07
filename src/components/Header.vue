@@ -1,14 +1,18 @@
 <template>
-  <header>
-    <nav class="navbar">
-      <div class="nav-container">
-        <a href="#" class="logo">
-          <h1>ToDo App VueJS</h1>
-        </a>
-      </div>
-    </nav>
-  </header>
-  <div class="header-wave" :style="{ backgroundImage: 'url(' + require('@/assets/wave.svg') + ')' }" />
+  <div>
+    <header>
+      <nav class="navbar">
+        <div class="nav-container centered">
+          <div class="logo-container">
+            <a href="#" class="logo" title="Arilson Bolivar: Todo App">
+              <h1>VueJS: ToDo</h1>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="header-wave" :style="{ backgroundImage: 'url(' + require('@/assets/wave.svg') + ')' }" />
+  </div>
 </template>
 
 <script>
@@ -22,7 +26,7 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 100px;
+    height: 120px;
     background: #e63946;
   }
   .navbar {
@@ -31,25 +35,15 @@
     width: 100%;
     height: 60px;
   }
-
+  .nav-container {
+    background: transparent
+  }
   .logo {
     color: #fff;
   }
-
   .logo > h1 {
     font-weight: 900;
   }
-
-  .nav-container {
-    width: 800px;
-    margin: 0 auto;
-  }
-
-  .header-container {
-    margin: 0 auto;
-    width: 800px;
-  }
-
   .header-wave {
     background-repeat: no-repeat;
     background-size: contain;
@@ -61,5 +55,4 @@
     width: 100%;
     overflow: hidden;
   }
-
 </style>

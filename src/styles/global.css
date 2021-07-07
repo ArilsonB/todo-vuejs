@@ -1,14 +1,12 @@
-:root {
-  --color-primary: #ddd;
-}
-
 body {
   display: flex;
-  font-family: 'Encode Sans SC', sans-serif;
+  flex-direction: column;
   background-color: #eee;
+  font-family: 'Encode Sans SC', sans-serif;
 }
 
-.container {
-  margin: 0 auto;
+.centered {
+  display: flex;
   width: 50vw;
+  margin: 0 auto;
 }

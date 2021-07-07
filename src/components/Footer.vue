@@ -1,24 +1,25 @@
 <template>
-  <footer class="container">
-    <span>&copy; Copyright {{year}} by Arilson Bolivar. Todos os direitos reservados.</span>
+  <footer class="centered">
+    <div class="copy">
+      <span>&copy; Copyright {{year}} – <a href="https://arilsondev.github.io">Arilson Bolivar</a>. Todos os direitos reservados.</span>
+    </div>
   </footer>
 </template>
 
 <script>
   export default {
     name: 'Footer',
-    data: () => {
+    data: function(){
       return {
-        year: (new Date()).getFullYear()
+        year: (new Date()).getFullYear(),
       }
-    },
+    }
   }
 </script>
 
 <style scoped>
-  .container {
-    padding-bottom: 10px;
+  footer {
     margin-top: 15px;
-    font-size: 15px;
+    padding-bottom: 20px;
   }
 </style>
